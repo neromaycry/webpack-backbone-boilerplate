@@ -6,18 +6,21 @@ var tpl = require('./template.html');
 
 var HomeView = BaseView.extend({
 
+    id: 'HomeView',
+
     template: tpl,
 
     events: {
-        'click #toStory': 'onToStoryClick' 
+        'click #toStory': 'onToStoryClick'
     },
 
-    onCreate: function() {
+    onCreate: function () {
         console.log('homeView onCreate');
+    },
+
+    onToStoryClick: function () {
+        router.navigate('story', { trigger: true });
     }
-
-    
-
 
 });
 

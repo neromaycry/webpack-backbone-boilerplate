@@ -1,31 +1,49 @@
 var Backbone = require('Backbone');
 var _ = require('underscore');
+var BaseView = require('../common/BaseView');
 
 var tpl = require('./template.html');
 
-var HomeView = Backbone.View.extend({
-    el: '#wrapper',
+var HomeView = BaseView.extend({
 
     template: tpl,
 
     events: {
-        'click #toStory': 'onToStoryClicked'
+        'click #toStory': 'onToStoryClick' 
     },
 
-    initialize: function() {
-        this.template = _.template(this.template);
-        this.render();
-    },
-
-    onToStoryClicked: function() {
-        router.navigate('story', {trigger: true});
-    },
-
-    render: function() {
-        this.$el.html(this.template());
-        return this;
+    onCreate: function() {
+        console.log('homeView onCreate');
     }
 
+    
+
+
 });
+
+// var HomeView = Backbone.View.extend({
+//     el: '#wrapper',
+
+//     template: tpl,
+
+//     events: {
+//         'click #toStory': 'onToStoryClicked'
+//     },
+
+//     initialize: function() {
+//         this.template = _.template(this.template);
+//         this.render();
+//     },
+
+//     onToStoryClicked: function() {
+//         router.navigate('story', {trigger: true});
+//     },
+
+//     render: function() {
+//         this.$el.html(this.template());
+//         return this;
+//     }
+
+// });
 
 module.exports = HomeView;

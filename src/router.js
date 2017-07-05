@@ -10,11 +10,9 @@ var AppRouter = Backbone.Router.extend({
     },
 
     home: function () {
-        console.log('应用入口方法');
         var homeView = new HomeView();
     },
     story: function () {
-        console.log('切换到story页面');
         var storyView = new StoryView();
     }
 });

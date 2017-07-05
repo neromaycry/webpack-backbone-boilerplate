@@ -7,17 +7,15 @@ var BaseView = Backbone.View.extend({
 
     el: '#wrapper',
 
+    id: null,
+
     template: null,
 
     initialize: function (args) {
         var self = this;
 
-        if (this.template === null) {
-            console.log('default template is null, please set a default template for the view.');
+        if (this.validtArgs() !== true) {
             return;
-        }
-        else {
-            this.template = _.template(this.template);
         }
 
         this.onCreate();
@@ -25,6 +23,22 @@ var BaseView = Backbone.View.extend({
         $(document).ready(function () {
             self.onStart();
         });
+    },
+
+    validtArgs: function () {
+        if (this.id === null) {
+            console.error('You must set "id" attribute for the view');
+            return false;
+        }
+
+        if (this.template === null) {
+            console.error('Default template is null, please set a default template for this view: ' + this.id);
+            return false;
+        }
+        else {
+            this.template = _.template(this.template);
+        }
+        return true;
     },
 
     /**

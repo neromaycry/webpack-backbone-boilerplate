@@ -5,7 +5,7 @@ var Mustache = require('mustache');
 
 var BaseView = Backbone.View.extend({
 
-    el: '#wrapper'
+    el: '#wrapper',
 
     template: null,
 
@@ -46,7 +46,8 @@ var BaseView = Backbone.View.extend({
     },
 
     render: function () {
-        var html = Mustache.render(this.template(), this.model.toJSON());
+        var tplData = this.model ? this.model.toJSON() : {};
+        var html = Mustache.render(this.template(), tplData);
         this.$el.html(html);
         return this;
     }

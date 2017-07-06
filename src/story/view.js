@@ -14,10 +14,6 @@ var StoryView = BaseView.extend({
         'click #back': 'onBackClicked'
     },
 
-    onCreate: function() {
-        console.log('this is story view.');
-    },
-
     onBackClicked: function () {
         router.navigate('home', { trigger: true });
     },

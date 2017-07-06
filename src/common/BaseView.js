@@ -59,6 +59,9 @@ var BaseView = Backbone.View.extend({
         this.render();
     },
 
+    /**
+     * 默认的render函数，可以在子view创建时重写它
+     */
     render: function () {
         var tplData = this.model ? this.model.toJSON() : {};
         var html = Mustache.render(this.template(), tplData);

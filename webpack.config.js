@@ -29,7 +29,4 @@ module.exports = {
         hot: true,
         inline: true
     },
-
-
-
 };

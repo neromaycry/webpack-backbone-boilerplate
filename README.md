@@ -18,7 +18,7 @@ npm start
 
 ###### 打包：
 ```
-webpack
+npm build
 ```
 
 

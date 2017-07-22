@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot --inline"
+    "start": "webpack-dev-server --hot --inline",
+    "build": "webpack"
   },
   "author": "Joey Kwok",
   "license": "ISC",
